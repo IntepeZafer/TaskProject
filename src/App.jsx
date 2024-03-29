@@ -21,6 +21,15 @@ function App() {
     })
     setTask(afterDeletingTask);
   }
+  const updatedTask = (id,updateTitle,updatedTaskDesc) => {
+    const updatedTask = task.map((task) => {
+      if(task.id === id){
+        return {id , title : updateTitle , taskDesc : updatedTaskDesc}
+      }
+      return task;
+    })
+    setTask(updatedTask);
+  }
   return (
     <div className='App'>
       <TaskCreate onCreate={createTask}/>
